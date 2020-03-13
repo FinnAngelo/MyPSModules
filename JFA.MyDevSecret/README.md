@@ -15,8 +15,8 @@ Invoke-Pester
 
 $secret = Read-Host -AsSecureString "Please enter your secret"
 
-Set-MyDevSecretFromSecureString FromPrompt $secret
-Get-MyDevSecret FromPrompt
+Set-MyDevSecretFromSecureString -key "KeyFromPrompt" -secureSecret $secret
+Get-MyDevSecret "KeyFromPrompt"
 ```
 
 ## Suggestions ##
