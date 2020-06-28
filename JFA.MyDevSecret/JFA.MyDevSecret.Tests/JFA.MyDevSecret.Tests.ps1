@@ -1,3 +1,5 @@
+Import-Module JFA.MyDevSecret
+
 Describe "Explore Setting Secrets for Powershell Modules" {
 
     Context "Check setting a secret" {
@@ -10,7 +12,7 @@ Describe "Explore Setting Secrets for Powershell Modules" {
             Set-MyDevSecret $key $secret
 
             #then
-            $result = Test-Path "G:\MyDevSecret\$key.txt"
+            $result = Test-Path "$env:APPDATA\MyDevSecret\$key.txt"
             $result | Should Be True
         }
     }
